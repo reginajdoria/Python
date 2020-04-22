@@ -1,0 +1,12 @@
+import requests
+from bs4  import BeautifulSoup
+URL = 'https://www.plu.edu/'
+webpage = requests.get (URL)
+soup =  BeautifulSoup (webpage.text,'html.parser') 
+import re
+Result = soup.find_all(string = re.compile("PLU"))
+print (Result)
+
+#f = open ('example.txt','w’)
+#f.write (str(Result))
+#f.close ()
